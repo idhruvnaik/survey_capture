@@ -1,0 +1,28 @@
+User
+ id: integer
+ name: string
+ email: string
+
+Survey
+ name: string
+ description: text
+
+SurveyQuestion
+ survey_id : reference : survey
+ master_question_id: reference : survey
+
+MasterQuestion
+  id: integer
+  name: string
+  type: enum { text, number, radio }
+  options: []
+
+User::SurveyResponse
+ user_id
+ survey_id : reference : survey
+
+SurveyAnswer
+ id: integer
+ survey_response : reference : User::SurveyResponse
+ answer: text
+ master_question : reference : master_question
