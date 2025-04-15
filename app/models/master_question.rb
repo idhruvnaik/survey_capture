@@ -1,0 +1,2 @@
+class MasterQuestion < ApplicationRecord
+end
